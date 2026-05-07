@@ -158,20 +158,10 @@ Metrics are reported on the **2024 holdout set**, on real price scale (DKK/m²):
 
 | Metric | Value |
 |---|---|
-| MAE | — |
-| RMSE | — |
-| MAE % | — |
+| MAE | — 7022|
 
-> Fill in after running the model on your data.
+| MAE % | — 32%|
 
----
 
-## Changelog
 
-### v2 (current)
-- **FIX #1:** Outlier removal (quantile 0.98) moved after train/test split — computed only on training labels to eliminate data leakage
-- **FIX #2:** Replaced random validation split in Optuna with a time-based split (`year < 2022` / `year >= 2022`)
-- **FIX #3:** Added `early_stopping_rounds=50` to XGBoost in both Optuna objective and final model training
 
-### v1
-- Initial pipeline with full feature engineering, log-transform target, and Optuna optimization
